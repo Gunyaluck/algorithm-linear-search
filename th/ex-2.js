@@ -17,7 +17,7 @@ function findIfProductsAvailable(products, targetProduct, targetQuantity) {
   for (let i = 0; i < products.length; i++) {
     if (products[i].name === targetProduct) {
       if (products[i].quantity >= targetQuantity) {
-        return `${products[i].quantity} ${targetProduct}s are available at Zone ${products[i].zone}`;
+        return `${targetQuantity} ${targetProduct}s are available at Zone ${products[i].zone}`;
       } else {
         return `Sorry, we've got only ${products[i].quantity} ${targetProduct}s available at Zone ${products[i].zone}`;
       }
@@ -35,7 +35,7 @@ const products = [
 ];
 
 console.log(findIfProductsAvailable(products, "Chocolate Milk", 3));
-// 10 Chocolate Milk(s) are available at Zone A1
+// 3 Chocolate Milk(s) are available at Zone A1 //เป็น3เพราะต้องการจำนวนที่เค้าต้องการ
 
 console.log(findIfProductsAvailable(products, "Pepsi", 10));
 // Sorry, we've got only 5 Pepsi(s) available at Zone B2
